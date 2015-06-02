@@ -5,6 +5,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y postgresql-clie
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 
+RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
+
 ENV PGDUMP_OPTIONS -Fc --no-acl --no-owner
 ENV PGDUMP_DATABASE **None**
 
